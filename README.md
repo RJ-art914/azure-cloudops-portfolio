@@ -1,5 +1,7 @@
 # Azure CloudOps Incident Portal
 
+[![CI Validation](https://github.com/RJ-art914/azure-cloudops-portfolio/actions/workflows/validate.yml/badge.svg)](https://github.com/maxmustermann/azure-cloudops-portfolio/actions/workflows/validate.yml)
+
 **Azure cloud engineering portfolio project demonstrating Infrastructure as Code, serverless architecture, managed identity, RBAC, observability, cost awareness and real-world troubleshooting.**
 
 [**Live Demo →**](https://mango-beach-00bd3a40f.7.azurestaticapps.net)
@@ -25,6 +27,7 @@ The environment demonstrates:
 - **Budget and cost alerts**
 - **Serverless / cost-conscious architecture**
 - **Git and GitHub-based source control**
+- **GitHub Actions CI** for Terraform, Python and frontend validation
 - Real Azure deployment and troubleshooting experience
 
 ---
@@ -364,7 +367,7 @@ chmod +x scripts/deploy.sh
 
 ### Planned
 
-- [ ] GitHub Actions validation CI
+- [x] GitHub Actions validation CI
 - [ ] AZ-104 networking lab
 - [ ] VNet / subnet / NSG scenarios
 - [ ] Private Endpoint + Private DNS
