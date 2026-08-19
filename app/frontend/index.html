@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Azure CloudOps Portfolio</title>
+  <meta name="description" content="Azure CloudOps portfolio project built with Terraform and serverless Azure services.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">AZURE CLOUD ENGINEERING PORTFOLIO</p>
+      <h1>CloudOps Incident Portal</h1>
+      <p class="subtitle">Terraform · Azure Functions · Managed Identity · Storage · Monitor</p>
+    </div>
+    <div class="health-card">
+      <span id="health-dot" class="dot unknown"></span>
+      <div>
+        <strong id="health-text">Checking API...</strong>
+        <small id="health-time">—</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Incident statistics">
+      <article><span id="stat-open">0</span><small>Open</small></article>
+      <article><span id="stat-investigating">0</span><small>Investigating</small></article>
+      <article><span id="stat-critical">0</span><small>Critical</small></article>
+      <article><span id="stat-resolved">0</span><small>Resolved</small></article>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">OPERATIONS</p>
+            <h2>Incidents</h2>
+          </div>
+          <button id="refresh-btn" class="secondary">Refresh</button>
+        </div>
+        <div id="incident-list" class="incident-list">
+          <p class="muted">Loading incidents...</p>
+        </div>
+      </article>
+
+      <aside class="panel">
+        <p class="eyebrow">CREATE</p>
+        <h2>New incident</h2>
+        <form id="incident-form">
+          <label>Title
+            <input name="title" required maxlength="100" placeholder="Storage access failure">
+          </label>
+          <label>Azure service
+            <input name="service" required maxlength="80" placeholder="Azure Storage">
+          </label>
+          <label>Severity
+            <select name="severity">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+              <option value="critical">Critical</option>
+            </select>
+          </label>
+          <label>Description
+            <textarea name="description" rows="5" maxlength="1000" placeholder="Describe symptoms and impact..."></textarea>
+          </label>
+          <button type="submit" class="primary">Create incident</button>
+          <p id="form-message" class="form-message" role="status"></p>
+        </form>
+      </aside>
+    </section>
+
+    <section class="architecture panel">
+      <p class="eyebrow">ARCHITECTURE</p>
+      <h2>What this demo proves</h2>
+      <div class="chips">
+        <span>Terraform IaC</span>
+        <span>Remote State</span>
+        <span>Azure Functions</span>
+        <span>Static Web Apps</span>
+        <span>Managed Identity</span>
+        <span>Azure RBAC</span>
+        <span>Table Storage</span>
+        <span>Application Insights</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Azure CloudOps Portfolio Lab</span>
+    <span>Built as a practical cloud engineering project</span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

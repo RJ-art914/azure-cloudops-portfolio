@@ -1,0 +1,8 @@
+location                = "germanywestcentral"
+static_web_app_location = "eastus2"
+environment             = "demo"
+project_name            = "cloudops"
+
+tags = {
+  owner = "your-name"
+}

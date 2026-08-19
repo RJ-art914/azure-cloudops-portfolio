@@ -1,0 +1,41 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+
+# Terraform variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python_packages/
+
+# Azure Functions
+app/api/local.settings.json
+
+# Node
+node_modules/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+
+# Temporary deployment files
+*.zip
+.env
+
+# Generated frontend runtime config
+app/frontend/config.js
+.env.*
