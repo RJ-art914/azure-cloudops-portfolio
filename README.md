@@ -1,6 +1,6 @@
 # Azure CloudOps Incident Portal
 
-[![CI Validation](https://github.com/RJ-art914/azure-cloudops-portfolio/actions/workflows/validate.yml/badge.svg)](https://github.com/maxmustermann/azure-cloudops-portfolio/actions/workflows/validate.yml)
+[![CI Validation](https://github.com/RJ-art914/azure-cloudops-portfolio/actions/workflows/validate.yml/badge.svg)](https://github.com/RJ-art914/azure-cloudops-portfolio/actions/workflows/validate.yml)
 
 **Azure cloud engineering portfolio project demonstrating Infrastructure as Code, serverless architecture, managed identity, RBAC, observability, cost awareness and real-world troubleshooting.**
 
