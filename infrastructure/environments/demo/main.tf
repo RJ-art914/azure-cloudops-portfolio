@@ -61,12 +61,18 @@ resource "azurerm_storage_table" "incidents" {
   storage_account_id = azurerm_storage_account.app.id
 }
 
+resource "azurerm_storage_table" "rate_limits" {
+  name               = "ratelimits"
+  storage_account_id = azurerm_storage_account.app.id
+}
+
 resource "azurerm_log_analytics_workspace" "main" {
   name                = "law-${var.project_name}-${var.environment}"
   location            = azurerm_resource_group.demo.location
   resource_group_name = azurerm_resource_group.demo.name
   sku                 = "PerGB2018"
   retention_in_days   = 30
+  daily_quota_gb      = 0.1
   tags                = local.common_tags
 }
 
@@ -110,12 +116,18 @@ resource "azurerm_function_app_flex_consumption" "api" {
 
   runtime_name           = "python"
   runtime_version        = "3.12"
-  maximum_instance_count = 5
+  maximum_instance_count = 3
   instance_memory_in_mb  = 2048
 
   app_settings = {
     APP_STORAGE_ACCOUNT_NAME              = azurerm_storage_account.app.name
     INCIDENTS_TABLE_NAME                  = azurerm_storage_table.incidents.name
+    RATE_LIMITS_TABLE_NAME                = azurerm_storage_table.rate_limits.name
+    WRITE_LIMIT_PER_HOUR                  = "30"
+    MAX_REQUEST_BYTES                     = "8192"
+    MAX_TITLE_LENGTH                      = "100"
+    MAX_SERVICE_LENGTH                    = "80"
+    MAX_DESCRIPTION_LENGTH                = "1000"
     ATTACHMENTS_CONTAINER_NAME            = azurerm_storage_container.attachments.name
     CORS_ALLOWED_ORIGIN                   = "https://${azurerm_static_web_app.frontend.default_host_name}"
     APPLICATIONINSIGHTS_CONNECTION_STRING = azurerm_application_insights.main.connection_string
