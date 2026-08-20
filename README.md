@@ -311,6 +311,15 @@ The Function deployment-storage configuration currently still uses the storage m
 
 The public demo is a portfolio environment rather than a production workload.
 
+### Public demo safeguards
+
+The unauthenticated public demo remains directly testable while limiting abuse and unexpected resource consumption through:
+
+- Azure Functions scaling limited to 3 instances
+- Global server-side write throttling of 30 successful writes per hour
+- Request and field-size validation
+- Log Analytics daily ingestion cap
+
 ---
 
 ## Deployment
